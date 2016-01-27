@@ -1,4 +1,3 @@
-require "spec_helper"
 require "administrate/fields/belongs_to"
 require "support/constant_helpers"
 require "support/field_matchers"
@@ -29,10 +28,10 @@ describe Administrate::Field::BelongsTo do
         association = Administrate::Field::BelongsTo.
           with_options(class_name: "Foo")
         field = association.new(:customers, [], :show)
-        candidates = field.candidate_records
+        candidates = field.associated_resource_options
 
         expect(Foo).to have_received(:all)
-        expect(candidates).to eq([])
+        expect(candidates).to eq([nil])
       ensure
         remove_constants :Foo
       end

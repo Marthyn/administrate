@@ -1,3 +1,6 @@
 $(function () {
-  $(".datetimepicker").datetimepicker({ format: "DD/MM/YYYY hh:mm:ss A" });
+  $(".datetimepicker").datetimepicker({
+    debug: false,
+    format: "YYYY-MM-DD HH:mm:ss",
+  });
 });

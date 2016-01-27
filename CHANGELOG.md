@@ -10,29 +10,103 @@
 * `[BUGFIX]`: Fixes a bug with a non-breaking change.
 * `[COMPAT]`: Compatibility improvements - changes to make Administrate more
   compatible with different dependency versions.
+* `[I18n]`: Internationalization. Changes to translations or localizations.
+* `[OPTIM]`: Optimization or performance increase.
 * `[DOC]`: Documentation changes. No changes to the library's behavior.
 
 ## Changes
 
 ### Upcoming Release
 
-* [#161] [FEATURE] Translation: Mandarin Chinese
-* [#142] [FEATURE] Translation: Brazilian Portuguese
-* [#171] [FEATURE] Translation: Polish
-* [#153] [FEATURE] Translation: Russian
-* [#148] [FEATURE] Translation: French
-* [#147] [FEATURE] Translation: German
+### 0.1.3 (January 22, 2016)
+
+* [#269] [FEATURE] Add a generator for copying default layout files
+* [#328] [FEATURE] Add a generator for copying default sidebar partial
+* [#362] [FEATURE] Add a generator for only the dashboard manifest.
+  Customizing this manifest before running the `administrate:install` generator
+  will change which dashboards get generated.
+* [#295] [FEATURE] Add dashboard detection for ActiveRecord::Enum fields.
+* [#364] [FEATURE] Improve dashboard generator by explicitly listing out the
+  generated `SHOW_PAGE_ATTRIBUTES` array elements.
+* [#416] [UI] Add an accessibility label to the search input
+* [#411] [UI] Use tabular figures in table cells
+* [#409] [UI] Use default system fonts
+* [#424] [BUGFIX] Fix a bug where running `rails destroy GENERATOR_NAME`
+  would not work for several of the generators
+* [#390] [BUGFIX] Fix timestamp deprecation warnings
+* [#365] [COMPAT] Remove dependency on `inline_svg`
+* [#396] [I18n] Ukrainian
+* [#297] [I18n] Italian
+* [#307] [I18n] Fix German grammatical errors
+* [#363] [DOC] Move documentation into main repository, at the root URL
+* [#395] [DOC] Update inline documentation for collection partial
+* [#387] [DOC] Fix incorrect path for generators in the docs
+
+### 0.1.2 (December 09, 2015)
+
+* [#251] [FEATURE] Raise a helpful error when an attribute is missing from
+  `ATTRIBUTE_TYPES`
+* [#298] [FEATURE] Support ActiveRecord model I18n translations
+* [#312] [FEATURE] Add a `nil` option to `belongs_to` form fields
+* [#282] [FEATURE] Running the install generator multiple times
+  no longer generates duplicate routes
+* [#231] [UI] Fix layout issue on show page where a long label next to an empty
+  value would cause following fields on the page to be mis-aligned.
+* [#309] [UI] Fix layout issue in datetime pickers where months and years
+  would not wrap correctly.
+* [#306] [UI] Wrap long text lines (on word breaks) on show pages
+* [#214] [UI] Improve header layout when there is a long page title
+* [#198] [UI] Improve spacing around bottom link in sidebar
+* [#206] [UI] Left-align checkboxes in boolean form fields
+* [#315] [UI] Remove the `IDS` suffix for `HasMany` form field labels
+* [#259] [BUGFIX] Make installation generator more robust
+  by ignoring dynamically generated, unnamed models
+* [#243] [BUGFIX] Fix up a "Show" button on the edit page that was not using the
+  `display_resource` method.
+* [#248] [BUGFIX] Improve polymorphic relationship's dashboard class detection.
+* [#247] [BUGFIX] Populate `has_many` and `belongs_to` select boxes
+  with the current value of the relationship.
+* [#217] [I18n] Dutch
+* [#263] [I18n] Swedish
+* [#272] [I18n] Danish
+* [#270] [I18n] Don't apologize about missing relationship support.
+* [#237] [I18n] Fix broken paths for several I18n files (de, es, fr, pt-BR, vi).
+* [#266] [OPTIM] Save a few database queries by using cached counts
+
+### 0.1.1 (November 12, 2015)
+
+* [#191] [CHANGE] Improve API for specifying how resources are displayed
+  across the dashboard.
+  * Models are now displayed with a sensible default - (e.g. "User #2")
+  * Users can define `ModelDashboard#display_resource(resource)` for custom
+    display behavior
+  * Users who have generated views for the following field types
+    may need to update them to take advantage of the new API:
+    * HasOne
+    * HasMany
+    * Polymorphic
+    * BelongsTo
+* [#126] [UI] Preserve whitespace when rendering text fields
+* [#194] [BUGFIX] Don't clear out datetime values in form fields
 * [#193] [BUGFIX] Don't assume that unrecognized db column types are searchable
-* [#156] [COMPAT] Include missing `sass-rails` dependency in gemspec
-* [COMPAT] Update repository structure so Bundler can pull the gem from github.
-  (e.g. `gem "administrate", github: "thoughtbot/administrate"`)
-* [COMPAT] Use ANSI SQL standards for case-insensitive search
-* [DOC] Add Rubygems version badge to README
 * [#124] [BUGFIX] Better detection of application models
-* [DOC] Add CircleCI badge to README
-* [DOC] Add CodeClimate badge to README
-* [UI] Preserve whitespace when rendering text fields
-* [#154] [FEATURE] Add Spanish translation for i18n
+* [#156] [COMPAT] Include missing `sass-rails` dependency in gemspec
+* [#174] [COMPAT] Make several missing dependencies explicit.
+* [#144] [COMPAT] Update repository structure so Bundler can pull the gem from github.
+  (e.g. `gem "administrate", github: "thoughtbot/administrate"`)
+* [#166] [COMPAT] Use ANSI SQL standards for case-insensitive search
+* [#223] [I18n] Vietnamese
+* [#161] [I18n] Mandarin Chinese
+* [#196] [I18n] Taiwanese Mandarin
+* [#142] [I18n] Brazilian Portuguese
+* [#171] [I18n] Polish
+* [#153] [I18n] Russian
+* [#148] [I18n] French
+* [#147] [I18n] German
+* [#154] [I18n] Spanish
+* [#120] [DOC] Add Rubygems version badge to README
+* [#165] [DOC] Add CircleCI badge to README
+* [#119] [DOC] Add CodeClimate badge to README
 
 ### 0.1.0 (October 30, 2015)
 

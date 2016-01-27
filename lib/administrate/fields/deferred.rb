@@ -1,3 +1,5 @@
+require "active_support/core_ext/module/delegation"
+
 module Administrate
   module Field
     class Deferred
@@ -13,7 +15,9 @@ module Administrate
       end
 
       def ==(other)
-        deferred_class == other.deferred_class && options == other.options
+        other.respond_to?(:deferred_class) &&
+          deferred_class == other.deferred_class &&
+          options == other.options
       end
 
       def searchable?
